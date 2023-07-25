@@ -1,0 +1,114 @@
+2.Develop and demonstrate the usage of inline, external and internal style sheet using CSS. Use XHTML page that contains at least three paragraphs of text, listed elements and a table with four rows and four columns.
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Program 2</title>
+		<link rel="stylesheet" type="text/css" href="mycss.css" />
+		<style type="text/css">
+			ol{list-style-type:upper-roman;}
+			ol ol{list-style-type:upper-alpha;}
+			ol ol ol{list-style-type:decimal;}
+			ul{list-style-type:square;}
+			h3{font-family:'Courier New'; font-size:18pt}
+			#two{
+			 font-style:italic;
+			}
+			.one{
+				font-weight:bold;
+				font-family:'Courier New';
+			}
+		</style>
+	</head>
+	<body style="background-color:AliceBlue">
+		
+  <p class="one" style="margin:0.2in; padding:0.2;background-color:#C0C0C0; border-style:solid;">
+  The Department of MCA was established in 2001.
+  The Department offers a postgraduate degree titled ‘Master of Computer Applications’.
+  The programme is of 3 years (6 semesters) duration. Current student intake is 120.</p>
+    
+  <p id="two" style="margin:0.1in; padding:0.3;background-color:#C0C0C0; border-style:solid;">
+  The Department of MCA was established in 2001.
+  The Department offers a postgraduate degree titled ‘Master of Computer Applications’.
+  The programme is of 3 years (6 semesters) duration. The current student intake is 120.</p>
+    
+  <p style="margin:0.3in; padding:0.1;background-color:#C0C0C0; border-style:solid;">
+  The Department of MCA was established in 2001.
+  The Department offers a postgraduate degree titled ‘Master of Computer Applications’.
+  The programme is of 3 years (6 semesters) duration. The current student intake is 120.</p>
+
+		
+		<h2>Aircraft Type</h2>
+		<ol>
+			<li>General Aviation
+				<ol>
+					<li>Single Engine Aircraft
+						<ol>
+							<li>Tail wheel</li>
+							<li>Tricycle</li>
+						</ol>
+					</li>
+					<li>Dual Engine Aircraft
+						<ol>
+							<li>Wing-mounted engines</li>
+							<li>Push-pull fuselage-mounted engines</li>
+						</ol>
+					</li>
+				</ol>
+			</li>
+		</ol>
+		
+		<h3>Common single-engine aircraft</h3>
+		<ul>
+			<li>Cessna Skyhawk</li>
+			<li>Beechcraft Bonanza</li>
+			<li>Piper Cherokee</li>
+		</ul>
+		<br/>
+		<table border="1">
+			<caption>Fruit Juice Drinks</caption>
+			<tr>
+				<th></th>
+				<th>Apple</th>
+				<th>Orange</th>
+				<th>Watermelon</th>
+			</tr>
+			<tr>
+				<th>Breakfast</th>
+				<td>0</td>
+				<td>1</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<th>Lunch</th>
+				<td>1</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<th>Dinner</th>
+				<td>0</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+Mycss.css
+body{
+	background-color:red;
+}
+
+table,th{
+				border-top-width:medium;
+				border-top-color:red;
+				border-top-style:dashed;
+				border-bottom-width:thick;
+				border-bottom-color:blue;
+				border-bottom-style:dotted;
+			}
+			
+p{
+	font-family:'Arial'
+}
+
