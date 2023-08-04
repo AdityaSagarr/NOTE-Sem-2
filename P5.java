@@ -1,74 +1,54 @@
+Here is a simple Java program that demonstrates the implementation of multiple inheritance using interfaces to calculate the area of a rectangle and triangle:
 
-public class OuterClass {
-    private int outerPrivateVariable = 10;
-    protected int outerProtectedVariable = 20;
-    public int outerPublicVariable = 30;
+```java
+interface Shape {
+    double calculateArea();
+}
 
-    private void outerPrivateMethod() {
-        System.out.println("Outer private method");
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+    
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
-
-    protected void outerProtectedMethod() {
-        System.out.println("Outer protected method");
+    
+    @Override
+    public double calculateArea() {
+        return length * width;
     }
+}
 
-    public void outerPublicMethod() {
-        System.out.println("Outer public method");
+class Triangle implements Shape {
+    private double base;
+    private double height;
+    
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
     }
-
-    class InnerClass {
-        private int innerPrivateVariable = 40;
-        protected int innerProtectedVariable = 50;
-        public int innerPublicVariable = 60;
-
-        private void innerPrivateMethod() {
-            System.out.println("Inner private method");
-            // Accessing outer class members
-            System.out.println("Accessing outer private variable: " + outerPrivateVariable);
-            System.out.println("Accessing outer protected variable: " + outerProtectedVariable);
-            System.out.println("Accessing outer public variable: " + outerPublicVariable);
-            outerPrivateMethod();
-            outerProtectedMethod();
-            outerPublicMethod();
-        }
-
-        protected void innerProtectedMethod() {
-            System.out.println("Inner protected method");
-        }
-
-        public void innerPublicMethod() {
-            System.out.println("Inner public method");
-        }
+    
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
     }
+}
 
+public class Main {
     public static void main(String[] args) {
-        OuterClass outerObj = new OuterClass();
+        Rectangle rectangle = new Rectangle(5, 10);
+        System.out.println("Area of rectangle: " + rectangle.calculateArea());
         
-        // Creating an instance of the inner class
-        InnerClass innerObj = new OuterClass().new InnerClass();
-
-        // Accessing inner class members
-        System.out.println("Accessing inner private variable: " + innerObj.innerPrivateVariable);
-        System.out.println("Accessing inner protected variable: " + innerObj.innerProtectedVariable);
-        System.out.println("Accessing inner public variable: " + innerObj.innerPublicVariable);
-        innerObj.innerPrivateMethod();
-        innerObj.innerProtectedMethod();
-        innerObj.innerPublicMethod();
+        Triangle triangle = new Triangle(4, 6);
+        System.out.println("Area of triangle: " + triangle.calculateArea());
     }
 }
 ```
 
-In this program, we have an outer class `OuterClass` and an inner class `InnerClass`. The inner class has access to the private, protected, and public members of the outer class. It can access the outer class's private variable `outerPrivateVariable`, protected variable `outerProtectedVariable`, and public variable `outerPublicVariable`. It can also call the outer class's private method `outerPrivateMethod()`, protected method `outerProtectedMethod()`, and public method `outerPublicMethod()`.
+In this program, we define an interface called `Shape` with a method `calculateArea()` that calculates the area of a shape. The `Rectangle` and `Triangle` classes implement the `Shape` interface and provide their own implementations for the `calculateArea()` method.
 
-In the main method, we create an instance of the outer class (`OuterClass`) and then create an instance of the inner class (`InnerClass`). We can access the inner class's private variable `innerPrivateVariable`, protected variable `innerProtectedVariable`, and public variable `innerPublicVariable`. We can also call the inner class's private method `innerPrivateMethod()`, protected method `innerProtectedMethod()`, and public method `innerPublicMethod()`.
+In the `main()` method, we create objects of `Rectangle` and `Triangle` classes and call their respective `calculateArea()` methods to calculate and display the areas of a rectangle and triangle.
 
-Note that in order to create an instance of the inner class, we use the syntax: 
-
-```java
-new OuterClass().new InnerClass()
-```
-
-This is because an instance of the inner class is associated with an instance of the outer class.
-
-Daily quota: 9/10
+Daily quota: 8/10
 ENG | ES | عربي | 中文 | فارسی
